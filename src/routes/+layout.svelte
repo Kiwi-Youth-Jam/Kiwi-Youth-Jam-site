@@ -4,17 +4,25 @@
 
     let { children } = $props();
 
+
 	const navBar = [
-		{text: "[Home]", href: "../#about"},
-		{text: "[Home]", href: "/"},
-		{text: "[Home]", href: "/"},
+		{text: "[About]", href: "../#about"},
+		{text: "[The Team]", href: "/"},
+		{text: "[Events]", href: "/#events"},
+        {text: "[Game Showcase]", href: "/"},
+        {text: "[Sponsorship]", href: "/"},
+        {text: "[Contacts]", href: "/"},
 	]
 </script>
+
+
 
 <svelte:head>
     <title>Kiwi Youth Jam</title>
     <link rel="icon" href={favicon} />
+ 
 </svelte:head>
+
 
 <header class="py-3 px-3">
     <div class="py-6 bg-secondary text-light rounded-xl flex justify-between items-center px-10">
@@ -28,7 +36,10 @@
 			{/each}
         </nav>
 
-         <a href="/signup" class="font-display text-xl inline-block bg-black p-3 rounded-xl hover:bg-blue-950"> Sign Up </a>
+        <button 
+			class="font-display text-2xl text-white inline-block bg-black p-3 rounded-xl hover:bg-blue-950 hover:cursor-pointer transition-colors">
+			Join
+		</button>
     </div>
 </header>
 

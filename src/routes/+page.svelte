@@ -1,21 +1,18 @@
-<script>
+<script lang="ts">
 
 	import favicon from '$lib/assets/favicon.svg'; 
 
 	const iconPositions = [
-		{ top: 'top-1/4', left: 'left-1/8' },
-		{ top: 'top-1/8', left: 'left-1/4' },
-		{ top: 'top-3/4', left: 'left-1/8' },
-		{ bottom: 'bottom-0', left: 'left-1/4' },
-		{ top: 'top-1/4', right: 'right-1/8' },
-		{ top: 'top-1/8', right: 'right-1/4' },
-		{ top: 'top-3/4', right: 'right-1/8' },
-		{ bottom: 'bottom-0', right: 'right-1/4' }
+		{ y: 'top-1/4', x: 'left-1/8' },
+		{ y: 'top-1/8', x: 'left-1/4' },
+		{ y: 'top-3/4', x: 'left-1/8' },
+		{ y: 'top-7/8', x: 'left-1/4' },
+		{ y: 'top-1/4', x: 'right-1/8' },
+		{ y: 'top-1/8', x: 'right-1/4' },
+		{ y: 'top-3/4', x: 'right-1/8' },
+		{ y: 'top-7/8', x: 'right-1/4' }
 	];
-
-	function handleSignUp() {
-        //TODO: Handle Sign UP
-	}
+	
 </script>
 
 <style>
@@ -23,7 +20,7 @@
     :global(body) {
         @apply bg-light;
     }
-    html {
+	:global(html) {
         scroll-behavior: smooth;
     }
 </style>
@@ -36,9 +33,8 @@
 		</h1>
 		
 		<button 
-			on:click={handleSignUp}
 			class="font-display text-2xl text-white inline-block bg-black p-6 m-15 rounded-xl hover:bg-blue-950 hover:cursor-pointer transition-colors">
-			Sign Up
+			Join
 		</button>
 	</div>
 
@@ -48,14 +44,39 @@
 			alt="Kiwi Youth Jam Icon"
 			height="100" 
 			width="100" 
-			class="absolute {pos.top || ''} {pos.bottom || ''} {pos.left || ''} {pos.right || ''}"
+			class="absolute {pos.y} {pos.x}"
 		/>
 	{/each}
 </div>
 
 
-<section id="about" class="flex justify-center">
-    <h1 class="text-5xl font-display mb-10 max-w-2xl">
-        What is Kiwi Youth Jam
-    </h1>
+<section id="about" class="flex justify-center bg-secondary text-xl">
+	<div class="text-light p-10 max-w-7xl">
+	    <h2 class="text-4xl font-display mb-3">What is Kiwi Youth Jam?</h2>
+
+        <p class="font-bold mb-8">
+            Kiwi Youth Jam is an organisation that runs events to help young
+            people across New Zealand get into game development. Our flagship
+            event, the Kiwi Youth Jam, is a game-making competition known as a
+            game jam, where participants create a game from scratch in a limited
+            amount of time.
+        </p>
+
+        <h2 class="text-4xl font-display mb-8">How Can I Join?</h2>
+
+        <section id="events">
+            <h2 class="text-5xl font-display text-center">Events</h2>
+			<h2 class="text-4xl font-display mb-3 text-center">Kiwi Youth Jam / Flagship</h2>
+			<p class="font-bold italic mb-8 text-center">
+				Insert Date / Time / Info
+        	</p>
+			<p class="font-bold mb-8">
+        	    Kiwi Youth Jam is an organisation that runs events to help young
+        	    people across New Zealand get into game development. Our flagship
+        	    event, the Kiwi Youth Jam, is a game-making competition known as a
+        	    game jam, where participants create a game from scratch in a limited
+        	    amount of time.
+        	</p>
+        </section>
+    </div>
 </section>
