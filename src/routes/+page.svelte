@@ -33,8 +33,8 @@
 		</h1>
 		
 		<button 
-			class="font-display text-2xl text-white inline-block bg-black p-6 m-15 rounded-xl hover:bg-blue-950 hover:cursor-pointer transition-colors">
-			Join
+			class="font-display text-4xl text-black p-3 hover:cursor-pointer hover:text-secondary">
+			Sign up for the Jam!
 		</button>
 	</div>
 
@@ -52,31 +52,19 @@
 
 <section id="about" class="flex justify-center bg-secondary text-xl">
 	<div class="text-light p-10 max-w-7xl">
-	    <h2 class="text-4xl font-display mb-3">What is Kiwi Youth Jam?</h2>
+	    <h2 class="text-5xl font-display text-center">What is Kiwi Youth Jam?</h2>
+		<br>
 
         <p class="font-bold mb-8">
-            Kiwi Youth Jam is an organisation that runs events to help young
-            people across New Zealand get into game development. Our flagship
-            event, the Kiwi Youth Jam, is a game-making competition known as a
-            game jam, where participants create a game from scratch in a limited
-            amount of time.
+            Kiwi Youth Jam is an organisation, founded in Wellington that runs events to help young
+            people across New Zealand get into game development. 
         </p>
 
-        <h2 class="text-4xl font-display mb-8">How Can I Join?</h2>
-
-        <section id="events">
-            <h2 class="text-5xl font-display text-center">Events</h2>
-			<h2 class="text-4xl font-display mb-3 text-center">Kiwi Youth Jam / Flagship</h2>
-			<p class="font-bold italic mb-8 text-center">
-				Insert Date / Time / Info
-        	</p>
-			<p class="font-bold mb-8">
-        	    Kiwi Youth Jam is an organisation that runs events to help young
-        	    people across New Zealand get into game development. Our flagship
-        	    event, the Kiwi Youth Jam, is a game-making competition known as a
-        	    game jam, where participants create a game from scratch in a limited
-        	    amount of time.
-        	</p>
-        </section>
+    </div>
+</section>
+<section id="contacts" class="flex justify-center bg-light text-xl">
+	<div class="text-black p-10 max-w-7xl">
+	    <h2 class="text-5xl font-display text-center">Contacts?</h2>
+		<br>
     </div>
 </section>
