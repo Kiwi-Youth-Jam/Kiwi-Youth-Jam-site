@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="LinkedIn_Banner" data-name="LinkedIn Banner" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #31572c;
+        stroke: #31572c;
+        stroke-miterlimit: 10;
+        stroke-width: .75px;
+      }
+    </style>
+  </defs>
+  <g id="Darkish_Green_Square_1-4" data-name="Darkish Green Square 1">
+    <circle class="cls-1" cx="28.1" cy="3.96" r="2.18"/>
+    <circle class="cls-1" cx="28.1" cy="12.01" r="2.18"/>
+    <circle class="cls-1" cx="20.03" cy="3.96" r="2.18"/>
+    <circle class="cls-1" cx="20.03" cy="12.01" r="2.18"/>
+    <circle class="cls-1" cx="11.97" cy="3.9" r="2.18"/>
+    <circle class="cls-1" cx="11.97" cy="11.94" r="2.18"/>
+    <circle class="cls-1" cx="3.9" cy="3.9" r="2.18"/>
+    <circle class="cls-1" cx="3.9" cy="11.94" r="2.18"/>
+    <circle class="cls-1" cx="28.1" cy="20.06" r="2.18"/>
+    <circle class="cls-1" cx="28.1" cy="28.1" r="2.18"/>
+    <circle class="cls-1" cx="20.03" cy="20.06" r="2.18"/>
+    <circle class="cls-1" cx="20.03" cy="28.1" r="2.18"/>
+    <circle class="cls-1" cx="11.97" cy="20.06" r="2.18"/>
+    <circle class="cls-1" cx="11.97" cy="28.1" r="2.18"/>
+    <circle class="cls-1" cx="3.9" cy="20.06" r="2.18"/>
+    <circle class="cls-1" cx="3.9" cy="28.1" r="2.18"/>
+  </g>
+</svg>

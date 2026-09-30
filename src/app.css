@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://use.typekit.net/iec7xbv.css');
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #CFE6CF;
+  --color-secondary: #31572C;
+  --color-dark: #132A13;
+  --color-light: #FAFFFA; 
+
+  --font-display: "Archivo Black", sans-serif;
+  --font-logo: "bubblegum-pop-vanilla", sans-serif;
+}
