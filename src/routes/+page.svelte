@@ -56,8 +56,9 @@
 		<br>
 
         <p class="font-bold mb-8">
-            Kiwi Youth Jam is an organisation, founded in Wellington that runs events to help young
-            people across New Zealand get into game development. 
+            Kiwi Youth Jam is an organisation, founded in Wellington, New Zealand that runs events to help young
+            people across New Zealand get learn or hone their game development skills. The name, Kiwi Youth Jam, refers to the primary kind of event we run, that being a game jam.
+			A game jam is an event where people compete in teams or solo
         </p>
 
     </div>
