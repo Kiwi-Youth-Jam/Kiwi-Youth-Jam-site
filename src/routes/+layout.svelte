@@ -12,6 +12,7 @@
 		{text: "[Events]", href: "/events"},
         {text: "[The Team]", href: "/team"},
 		{text: "[Game Showcase]", href: "/games"},
+		{text: "[Sponsors]", href: "/sponsors"},
 	];
 </script>
 
@@ -83,7 +84,7 @@
 		top: 0;
 		left: 0;
 		right: 0;
-		height: 200px;
+		height: 150px;
 
 		backdrop-filter: blur(20px);
 

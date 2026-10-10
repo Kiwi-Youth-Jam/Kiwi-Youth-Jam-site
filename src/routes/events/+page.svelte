@@ -1,8 +1,7 @@
-
-<div>
+<div class="margin-y-20">
 <h2 class="text-8xl font-display text-center font-logo">Events</h2>
 </div>
-
+<br>
 <div class="flex justify-center bg-secondary text-xl">
 	<div class="text-light p-10 max-w-7xl">
 		<h2 class="text-4xl font-display mb-3 text-center">Kiwi Youth Jam / Flagship</h2>
