@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Events | Kiwi Youth Jam</title>
+</svelte:head>
+
 <div class="margin-y-20">
 <h2 class="text-8xl font-display text-center font-logo">Events</h2>
 </div>
