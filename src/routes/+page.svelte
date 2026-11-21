@@ -103,16 +103,6 @@
 </script>
 
 <style>
-    @reference "../app.css";
-
-    :global(body) {
-        @apply bg-light dark:bg-dark;
-    }
-
-	:global(html) {
-        scroll-behavior: smooth;
-    }
-
 	.carousel {
 		width: 100%;
 	}

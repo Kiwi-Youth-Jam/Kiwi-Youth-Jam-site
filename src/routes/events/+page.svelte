@@ -1,5 +1,5 @@
 <section>
-	<h2 class="text-(--color-text-primary) text-8xl font-display text-center font-logo">Events</h2>
+	<h2 class="text-(--color-text-primary) dark:text-(--color-text-primary-dark) text-8xl font-display text-center font-logo">Events</h2>
 
 	<div class="flex justify-center bg-secondary text-xl">
 		<div class="text-light p-10 max-w-7xl">

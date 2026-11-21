@@ -19,21 +19,19 @@
     ];
 </script>
 
+<section id="sponsors">
+    <h2 class="text-8xl font-display text-center font-logo text-(--color-text-primary) dark:text-(--color-text-primary-dark)">Our Sponsors</h2>
 
-<div class="margin-y-20">
-	<h2 class="text-8xl font-display text-center font-logo">The Sponsors</h2>
-</div>
-<br>
-
-<div class="flex justify-center bg-secondary text-xl">
-	<div class="text-light p-10 max-w-7xl">
-        <div class="grid grid-cols-2 gap-8 text-center font-bold">
-        {#each sponsors as item}
-            <div>
-                <img src={item.logo} alt={item.name} class="mx-auto mb-8 rounded-lg shadow-lg">
-                <p class="text-3xl">{item.name}</p>
+    <div class="flex justify-center text-xl">
+        <div class="text-light p-10 max-w-7xl">
+            <div class="grid grid-cols-2 gap-8 text-center font-bold">
+            {#each sponsors as item}
+                <div>
+                    <img src={item.logo} alt={item.name} class="mx-auto mb-8 rounded-lg shadow-lg">
+                    <p class="text-3xl">{item.name}</p>
+                </div>
+            {/each}
             </div>
-        {/each}
         </div>
     </div>
-</div>
+</section>

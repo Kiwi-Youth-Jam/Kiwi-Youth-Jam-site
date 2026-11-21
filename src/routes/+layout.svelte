@@ -15,6 +15,18 @@
 	];
 </script>
 
+<style>
+    @reference "../app.css";
+
+    :global(body) {
+        @apply bg-light dark:bg-dark;
+    }
+
+	:global(html) {
+        scroll-behavior: smooth;
+    }
+</style>
+
 <svelte:head>
 	<title>Kiwi Youth Jam</title>
 	<link rel="icon" href={favicon} />
