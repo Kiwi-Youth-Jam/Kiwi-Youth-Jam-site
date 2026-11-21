@@ -4,7 +4,7 @@ import type { RequestHandler } from './$types';
 import { CDN_URL } from '$app/env/public';
 
 export const GET: RequestHandler = async ({ url }) => {
-	const query_dir = await fetch(`${CDN_URL}?ls`);
+	const query_dir = await fetch(`${CDN_URL}/carousel?ls`);
 	const query_json = await query_dir.json();
 
 	let images: string[] = [];
@@ -13,7 +13,7 @@ export const GET: RequestHandler = async ({ url }) => {
 		if (image.ext !== 'jpg')
 			continue;
 
-		images.push(`${CDN_URL}/${image.href}`);
+		images.push(`${CDN_URL}/carousel/${image.href}`);
 	}
 
 	return json(images);
