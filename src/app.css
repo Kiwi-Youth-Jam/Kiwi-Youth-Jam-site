@@ -3,7 +3,6 @@
 
 @import "tailwindcss";
 
-
 @theme {
     --color-primary: #31572C;
     --color-secondary: #132A13;
@@ -22,6 +21,4 @@
 
     --font-display: "Archivo Black", sans-serif;
     --font-logo: "bubblegum-pop-vanilla", sans-serif;
-
-    --tile-w: 640px;
 }
