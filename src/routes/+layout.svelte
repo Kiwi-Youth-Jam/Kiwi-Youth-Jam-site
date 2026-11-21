@@ -7,8 +7,8 @@
 	let menuOpen = $state(false);
 
 	const navBar = [
-		{text: "About", href: "../#about"},
-        {text: "Contacts", href: "/#contacts"},
+		{text: "About", href: "../about"},
+        {text: "Contact us", href: "/contact"},
 		{text: "Events", href: "/events"},
 		{text: "Game Showcase", href: "/games"},
 		{text: "Our Sponsors", href: "/sponsors"},
