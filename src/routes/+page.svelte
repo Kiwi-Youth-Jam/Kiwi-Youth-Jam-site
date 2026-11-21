@@ -1,6 +1,6 @@
 <script lang="ts">
 	import favicon from '$lib/assets/favicon.svg';
-    import { onMount } from 'svelte';
+    import { onMount, tick } from 'svelte';
 
 	const iconPositions = [
 		{ y: 'top-1/4', x: 'left-1/8' },
@@ -41,27 +41,6 @@
 		}
 	]
 
-	let carousel_images_initial: string[] = [
-		'https://cdn.hackclub.com/01a1fc9a-332d-78c9-bfc0-05dd42754c93/20261114-DSCF6141.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-2f27-7a45-af15-86451f4247c3/20261114-DSCF6140.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-2b7e-7621-8f7f-6497377ce1bd/20261114-DSCF6138.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-27be-78ad-86ba-367ffee1d470/20261114-DSCF6121.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-23f4-7ad8-a4d6-0600d498269c/20261114-DSCF6060.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-2039-78b4-999e-00cded669e54/20261114-DSCF6044.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-1c5d-76de-9ded-6f4b344d8825/20261114-DSCF6033.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-18e8-70a4-8c8a-219e619adf99/20261114-DSCF6029.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-154f-78c0-a6d0-278ada6f8bfb/20261114-DSCF6024.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-11c6-7b7d-8136-33cd1f7731f1/20261114-DSCF6023.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-0e55-7768-bdc4-ef8713bcb787/20261114-DSCF6020.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-0aec-7f6c-9fdb-245246432329/20261114-DSCF6019.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-0711-7a5e-b124-14993faf93c6/20261114-DSCF6018.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc9a-0367-7419-8b74-daaed8e7c168/20261114-DSCF6016.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc99-b251-7f0f-a200-1950a79e4de2/20261017-DSCF5772.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc99-c538-7a3c-941d-6f38b66a4fb8/20261017-DSCF5782.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc99-c89e-774c-81c4-db4a0370674a/20261017-DSCF5783.jpg-600x400.jpg',
-		'https://cdn.hackclub.com/01a1fc99-9f67-7c23-aba3-35cf625fd98a/20261017-DSCF5751.jpg-600x400.jpg'
-	];
-
 	function shuffle(array: string[]) {
 		let i = array.length, j, temp;
 
@@ -76,8 +55,7 @@
 		return array;
 	}
 
-	let carousel_images = shuffle(carousel_images_initial);
-
+	let carousel_images: string[] = $state([]);
 	const speed = 0.7;
 
 	let row: HTMLUListElement;
@@ -95,8 +73,17 @@
 	}
 
 	onMount(() => {
-		row.scrollLeft = 150;
-		animationFrame = requestAnimationFrame(animate);
+		async function init() {
+			const carousel_images_req = await fetch('/api/get_carousel_images');
+
+			carousel_images = shuffle(await carousel_images_req.json());
+			await tick();
+
+			row.scrollLeft = 150;
+			animationFrame = requestAnimationFrame(animate);
+		}
+
+		init();
 
 		return () => cancelAnimationFrame(animationFrame);
 	});
