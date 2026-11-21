@@ -1,5 +1,4 @@
 <script lang="ts">
-
 	import favicon from '$lib/assets/favicon.svg';
     import { onMount } from 'svelte';
 
@@ -24,34 +23,62 @@
 			name: "Drew Fitzgerald",
 			image: "",
 			description: "Drew Fitzgerald is awesome"
+		},
+		{
+			name: "Santoso Winatan",
+			image: "",
+			description: "Awesome Haven guy"
+		},
+		{
+			name: "Lewie Dudding",
+			image: "",
+			description: "Funky car enjoyer"
+		},
+		{
+			name: "Brendan Laking",
+			image: "",
+			description: "Awesome dude"
 		}
 	]
 
-	const scrolling_images = [
-		{
-			src: "images/people/jai.jpg",
-			alt: "rah"
-		},
-		{
-			src: "images/people/jai.jpg",
-			alt: "rah"
-		},
-		{
-			src: "images/people/jai.jpg",
-			alt: "rah"
-		},
-		{
-			src: "images/people/jai.jpg",
-			alt: "rah"
-		},
-	]
+	let carousel_images_initial: string[] = [
+		'https://cdn.hackclub.com/01a1fc9a-332d-78c9-bfc0-05dd42754c93/20261114-DSCF6141.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-2f27-7a45-af15-86451f4247c3/20261114-DSCF6140.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-2b7e-7621-8f7f-6497377ce1bd/20261114-DSCF6138.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-27be-78ad-86ba-367ffee1d470/20261114-DSCF6121.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-23f4-7ad8-a4d6-0600d498269c/20261114-DSCF6060.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-2039-78b4-999e-00cded669e54/20261114-DSCF6044.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-1c5d-76de-9ded-6f4b344d8825/20261114-DSCF6033.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-18e8-70a4-8c8a-219e619adf99/20261114-DSCF6029.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-154f-78c0-a6d0-278ada6f8bfb/20261114-DSCF6024.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-11c6-7b7d-8136-33cd1f7731f1/20261114-DSCF6023.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-0e55-7768-bdc4-ef8713bcb787/20261114-DSCF6020.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-0aec-7f6c-9fdb-245246432329/20261114-DSCF6019.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-0711-7a5e-b124-14993faf93c6/20261114-DSCF6018.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc9a-0367-7419-8b74-daaed8e7c168/20261114-DSCF6016.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc99-b251-7f0f-a200-1950a79e4de2/20261017-DSCF5772.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc99-c538-7a3c-941d-6f38b66a4fb8/20261017-DSCF5782.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc99-c89e-774c-81c4-db4a0370674a/20261017-DSCF5783.jpg-600x400.jpg',
+		'https://cdn.hackclub.com/01a1fc99-9f67-7c23-aba3-35cf625fd98a/20261017-DSCF5751.jpg-600x400.jpg'
+	];
 
-	const repeated_images = [
-		...scrolling_images,
-		...scrolling_images
-	]
+	function shuffle(array: string[]) {
+		let i = array.length, j, temp;
 
-	const speed = 0.5;
+		while (--i > 0) {
+			j = Math.floor(Math.random() * (i + 1));
+
+			temp = array[j];
+			array[j] = array[i];
+			array[i] = temp;
+		}
+
+		return array;
+	}
+
+	let carousel_images = shuffle(carousel_images_initial);
+
+	const speed = 0.7;
 
 	let row: HTMLUListElement;
 	let animationFrame: any;
@@ -86,26 +113,26 @@
         scroll-behavior: smooth;
     }
 
-	.carousell {
+	.carousel {
 		width: 100%;
 	}
 
-	.carousell-row::-webkit-scrollbar {
+	.carousel-row::-webkit-scrollbar {
 		display: none;
 	}
 
-	.carousell [class*="mask-image"] {
+	.carousel [class*="mask-image"] {
 		-webkit-mask: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.carousell-row {
+		.carousel-row {
 			scroll-behavior: auto;
 		}
 	}
 </style>
 
-<section class="relative flex justify-center h-[60vh] mb-20">
+<section class="relative flex justify-center h-[60vh] md:mb-20">
 	<div class="p-3 flex flex-col justify-center items-center absolute top-[10svh] md:top-[20svh] text-center z-10 text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">
 		<h1 class="text-8xl m-0 md:text-9xl font-logo">KIWI YOUTH JAM</h1>
 		<h1 class="text-2xl font-display mb-5 max-w-2xl font-light">Proudly building and supporting the next generation of New Zealand game developers.</h1>
@@ -115,31 +142,23 @@
 	</div>
 
 	{#each iconPositions as pos}
-		<img
-			src={favicon} 
-			alt="Kiwi Youth Jam Icon"
-			height="100"
-			width="100"
-			class="hidden md:block absolute {pos.y} {pos.x}"
-		/>
+		<img src={favicon} alt="Kiwi Youth Jam Icon" height="100" width="100" class="hidden md:block absolute {pos.y} {pos.x}" />
 	{/each}
 </section>
 
-<section class="carousell w-full flex flex-col justify-center [--tile-w:clamp(220px,28vw,300px)] max-sm:[--tile-w:clamp(180px,60vw,240px)]" aria-label="Trending now">
-	<div class="overflow-hidden">
-		<div class="[mask-image:linear-gradient(90deg,transparent,#000_4%,#000_96%,transparent)]">
-			<ul bind:this={row} aria-label="Scrolling Carousell" class="carousell-row list-none flex gap-1.5 overflow-x-auto py-[34px] px-[clamp(16px,5vw,48px)] m-0 [scrollbar-width:none] focus-visible:outline-none">
-				{#each repeated_images as image}
-					<li class="flex-none basis-[var(--tile-w)] snap-start relative">
-						<div class="block relative rounded-xl overflow-hidden no-underline">
-							<span class="block relative w-full aspect-video overflow-hidden">
-								<img src="{image.src}" alt="{image.alt}" />
-							</span>
-						</div>
-					</li>
-				{/each}
-			</ul>
-		</div>
+<section class="carousel overflow-hidden w-full flex flex-col justify-center [--tile-w:clamp(220px,28vw,300px)] max-sm:[--tile-w:clamp(180px,60vw,240px)]">
+	<div class="[mask-image:linear-gradient(90deg,transparent,#000_4%,#000_96%,transparent)]">
+		<ul bind:this={row} aria-label="Scrolling carousel" class="carousel-row list-none flex gap-2 overflow-x-auto py-[34px] px-[clamp(16px,5vw,48px)] m-0 [scrollbar-width:none] focus-visible:outline-none">
+			{#each [...carousel_images, ...carousel_images] as image}
+				<li class="flex-none basis-[var(--tile-w)] snap-start relative">
+					<div class="block relative rounded-xl overflow-hidden no-underline">
+						<span class="block relative w-full aspect-video overflow-hidden">
+							<img src="{image}" alt="From CDN" />
+						</span>
+					</div>
+				</li>
+			{/each}
+		</ul>
 	</div>
 </section>
 
