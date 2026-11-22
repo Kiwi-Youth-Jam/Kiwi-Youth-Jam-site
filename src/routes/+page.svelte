@@ -2,6 +2,8 @@
 	import favicon from '$lib/assets/favicon.svg';
     import { onMount, tick } from 'svelte';
 
+	import CaruoselImage from '$lib/components/CaruoselImage.svelte';
+
 	function shuffle(array: string[]) {
 		let i = array.length, j, temp;
 
@@ -102,13 +104,7 @@
 	<div class="[mask-image:linear-gradient(90deg,transparent,#000_4%,#000_96%,transparent)]">
 		<ul bind:this={row} aria-label="Scrolling carousel" class="carousel-row list-none flex gap-2 overflow-x-auto py-[34px] px-[clamp(16px,5vw,48px)] m-0 [scrollbar-width:none] focus-visible:outline-none">
 			{#each [...carousel_images, ...carousel_images] as image}
-				<li class="flex-none basis-[var(--tile-w)] snap-start relative">
-					<div class="block relative rounded-xl overflow-hidden no-underline">
-						<span class="block relative w-full aspect-video overflow-hidden">
-							<img src="{image}" alt="From CDN" />
-						</span>
-					</div>
-				</li>
+				<CaruoselImage image={image} />
 			{/each}
 		</ul>
 	</div>
