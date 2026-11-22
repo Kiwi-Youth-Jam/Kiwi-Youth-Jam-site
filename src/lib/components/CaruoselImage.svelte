@@ -8,4 +8,4 @@
             <img src="{image}" alt="From CDN" />
         </span>
     </div>
-</li>;
+</li>
