@@ -33,7 +33,7 @@
 </svelte:head>
 
 <header class="fixed top-0 left-0 right-0 z-50 py-3 px-3">
-	<div class="py-2 text-center bg-primary dark:bg-primary-dark text-(--color-text-primary) rounded-xl flex justify-between items-center px-6 backdrop-blur-xl md:px-10 relative z-10">
+	<div class="py-2 text-center bg-(--color-nav) dark:bg-(--color-nav-dark) text-(--color-text-primary) rounded-xl flex justify-between items-center px-6 backdrop-blur-xl md:px-10 relative z-10">
 		<a href="/" class="font-logo text-3xl md:text-4xl hover:text-(--color-text-hover-dark) hover:dark:text-(--color-text-hover-dark)">KIWI YOUTH JAM</a>
 
 		<nav class="hidden md:flex flex-row gap-6 text-l font-display">
@@ -50,7 +50,7 @@
 	</div>
 
 	{#if menuOpen}
-		<div class="md:hidden mt-2 bg-primary backdrop-blur-xl rounded-xl p-4 text-light font-display text-md relative z-10">
+		<div class="md:hidden mt-2 bg-(--color-nav) dark:bg-(--color-nav-dark) backdrop-blur-xl rounded-xl p-4 text-light font-display text-md relative z-10">
 			<nav class="flex flex-col">
 				{#each navBar as navItem}
 					<a href={navItem.href} class="hover:text-(--color-text-hovered) hover:dark:text-(--color-text-hovered-dark) py-3 px-3 transition" onclick={() => menuOpen = false}>{navItem.text}</a>
