@@ -8,27 +8,32 @@ export const GET: RequestHandler = async ({ url }) => {
         {
 			name: "Jai Janse",
 			image: `${CDN_URL}/people/jai.jpg`,
-			description: "Jai Janse is a massive gooner"
+			description: "Jai Janse is a massive gooner",
+            short_description: ""
 		},
 		{
 			name: "Drew Fitzgerald",
 			image: `${CDN_URL}/people/drew.jpg`,
-			description: "Drew Fitzgerald is awesome"
+			description: "Drew Fitzgerald is awesome",
+            short_description: ""
 		},
 		{
 			name: "Santoso Winatan",
 			image: `${CDN_URL}/people/santoso.jpg`,
-			description: "Awesome Haven guy"
+			description: "Awesome Haven guy",
+            short_description: ""
 		},
 		{
 			name: "Lewie Dudding",
 			image: `${CDN_URL}/people/lewie.jpg`,
-			description: "Funky car enjoyer"
+			description: "Funky car enjoyer",
+            short_description: ""
 		},
 		{
 			name: "Brendan Laking",
 			image: `${CDN_URL}/people/brendan.jpg`,
-			description: "Awesome dude"
+			description: "Awesome dude",
+            short_description: ""
 		}
     ];
 

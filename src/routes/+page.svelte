@@ -27,7 +27,7 @@
 		{ y: 'top-7/8', x: 'right-1/4' }
 	];
 
-	let team: {name: string, image: string, description: string}[] = $state([]);
+	let team: {name: string, image: string, description: string, short_description: string}[] = $state([]);
 
 	let carousel_images: string[] = $state([]);
 	const carousel_speed = 0.7;
@@ -135,7 +135,7 @@
 			<div class="flex items-center text-center flex-col gap-2">
 				<h2 class="text-2xl font-bold">{team_member.name}</h2>
 				<img class="rounded-xl" src="{team_member.image}" alt="Image of {team_member.name}" width="300px"/>
-				<p class="text-1xl">{team_member.description}</p>
+				<p class="text-1xl">{team_member.short_description}</p>
 			</div>
 		{/each}
 	</div>
