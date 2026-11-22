@@ -2,45 +2,6 @@
 	import favicon from '$lib/assets/favicon.svg';
     import { onMount, tick } from 'svelte';
 
-	const iconPositions = [
-		{ y: 'top-1/4', x: 'left-1/8' },
-		{ y: 'top-1/8', x: 'left-1/4' },
-		{ y: 'top-3/4', x: 'left-1/8' },
-		{ y: 'top-7/8', x: 'left-1/4' },
-		{ y: 'top-1/4', x: 'right-1/8' },
-		{ y: 'top-1/8', x: 'right-1/4' },
-		{ y: 'top-3/4', x: 'right-1/8' },
-		{ y: 'top-7/8', x: 'right-1/4' }
-	];
-
-	const team = [
-		{
-			name: "Jai Janse",
-			image: "images/people/jai.jpg",
-			description: "Jai Janse is a massive gooner"
-		},
-		{
-			name: "Drew Fitzgerald",
-			image: "",
-			description: "Drew Fitzgerald is awesome"
-		},
-		{
-			name: "Santoso Winatan",
-			image: "",
-			description: "Awesome Haven guy"
-		},
-		{
-			name: "Lewie Dudding",
-			image: "",
-			description: "Funky car enjoyer"
-		},
-		{
-			name: "Brendan Laking",
-			image: "",
-			description: "Awesome dude"
-		}
-	]
-
 	function shuffle(array: string[]) {
 		let i = array.length, j, temp;
 
@@ -55,15 +16,27 @@
 		return array;
 	}
 
-	let carousel_images: string[] = $state([]);
-	const speed = 0.7;
+	const iconPositions = [
+		{ y: 'top-1/4', x: 'left-1/8' },
+		{ y: 'top-1/8', x: 'left-1/4' },
+		{ y: 'top-3/4', x: 'left-1/8' },
+		{ y: 'top-7/8', x: 'left-1/4' },
+		{ y: 'top-1/4', x: 'right-1/8' },
+		{ y: 'top-1/8', x: 'right-1/4' },
+		{ y: 'top-3/4', x: 'right-1/8' },
+		{ y: 'top-7/8', x: 'right-1/4' }
+	];
 
+	let team: {name: string, image: string, description: string}[] = $state([]);
+
+	let carousel_images: string[] = $state([]);
+	const carousel_speed = 0.7;
 	let row: HTMLUListElement;
 	let animationFrame: any;
 
 	function animate() {
 		if (row) {
-			row.scrollLeft += speed;
+			row.scrollLeft += carousel_speed;
 
 			if (row.scrollLeft >= row.scrollWidth / 2)
 				row.scrollLeft = 0;
@@ -75,8 +48,11 @@
 	onMount(() => {
 		async function init() {
 			const carousel_images_req = await fetch('/api/get_carousel_images');
-
 			carousel_images = shuffle(await carousel_images_req.json());
+
+			const team_req = await fetch('/api/get_team');
+			team = await team_req.json();
+
 			await tick();
 
 			row.scrollLeft = 150;
@@ -84,7 +60,6 @@
 		}
 
 		init();
-
 		return () => cancelAnimationFrame(animationFrame);
 	});
 </script>
