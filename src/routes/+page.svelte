@@ -135,19 +135,3 @@
 		{/each}
 	</TeamMemberGrid>
 </section>
-
-<!--<section id="contacts" class="flex justify-center bg-light text-xl">
-	<div class="text-black p-10 max-w-7xl">
-	    <h2 class="text-5xl font-light font-display text-center pb-3">Contact us</h2>
-
-		<div class="flex flex-col gap-4 md:grid grid-cols-3 justify-evenly">
-			{#each contacts as contact}
-				<div class='flex flex-col gap-1 text-md bg-gray-200 rounded-md p-4'>
-					<span>{contact.name} - {contact.role}</span>
-					<span>{contact.email}</span>
-					<img src="{contact.image}" alt="Image of {contact.name}" />
-				</div>
-			{/each}
-		</div>
-    </div>
-</section>-->

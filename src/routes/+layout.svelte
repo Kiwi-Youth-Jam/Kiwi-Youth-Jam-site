@@ -61,9 +61,9 @@
 		]}),
 
 		new NavbarDropdown({text: 'For parents', navbarChildren: [
+			new NavbarLink({text: 'Safeguarding', href: '/safeguarding'}),
 			new NavbarLink({text: 'For parents', href: '/parents'}),
 			new NavbarLink({text: 'FAQ', href: '/faq'}),
-			new NavbarLink({text: 'How do I know my child will be safe', href: '/faq'}),
 		]}),
 
 		new NavbarLink({text: 'FAQ', href: '/faq'}),
@@ -102,7 +102,7 @@
 					<DropdownMenu>
 						<span class="hover:text-(--color-text-hovered) select-none hover:dark:text-(--color-text-hovered-dark) transition">{navItem.text}</span>
 
-						<div class='content bg-(--color-nav-secondary) dark:bg-(--color-nav-secondary-dark) shadow-xl px-3 pb-3 rounded-b-xl flex-col gap-2 items-center min-w-max'>
+						<div class='content bg-(--color-nav-secondary) dark:bg-(--color-nav-secondary-dark) text-left shadow-2xl px-3 pb-3 rounded-b-xl flex-col gap-3 min-w-max'>
 							{#each navItem.navbarChildren as dropdownItem}
 								<DropdownMenuItem text={dropdownItem.text} href={dropdownItem.href} />
 							{/each}
