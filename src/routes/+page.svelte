@@ -92,7 +92,7 @@
 		<h1 class="text-2xl font-display mb-5 max-w-2xl font-light">Proudly building and supporting the next generation of New Zealand game developers.</h1>
 
 		<h2 class="text-2xl font-bold mb-1.5">Kiwi Youth Jam 27: Date TBD</h2>
-		<button class="text-3xl bg-primary dark:bg-(--color-primary-dark) rounded-xl font-display md:text-4xl transition p-3 hover:cursor-pointer hover:bg-(--color-hovered) text-(--color-text-primary) hover:dark:bg-(--color-hovered-dark) hover:text-(--color-text-hovered) hover:dark:text-(--color-text-hovered-dark)">Sign up</button>
+		<button class="text-3xl bg-primary dark:bg-(--color-primary-dark) shadow-xl rounded-xl font-display md:text-4xl transition p-3 hover:cursor-pointer hover:bg-(--color-hovered) text-(--color-text-primary) hover:dark:bg-(--color-hovered-dark) hover:text-(--color-text-hovered) hover:dark:text-(--color-text-hovered-dark)">Sign up</button>
 	</div>
 
 	{#each iconPositions as pos}

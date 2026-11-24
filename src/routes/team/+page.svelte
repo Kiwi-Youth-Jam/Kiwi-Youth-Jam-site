@@ -1,44 +1,24 @@
 <script lang="ts">
-    const teamMembers = [
-        {
-            name: "Jai Janse",
-            image: "images/IMG_9867.JPG",
-            description: "Some description that I'll get the person themselves to write"
-        },
-        {
-            name: "Brendan Laking",
-            image: "images/IMG_9867.JPG",
-            description: "Some description that I'll get the person themselves to write"
-        },
-        {
-            name: "John Barrow",
-            image: "images/IMG_9867.JPG",
-            description: "Some description that I'll get the person themselves to write"
-        },
-        {
-            name: "Liam Mitchell",
-            image: "images/IMG_9867.JPG",
-            description: "Some description that I'll get the person themselves to write"
-        }
-    ];
+    import { onMount } from 'svelte';
+
+    let team: {name: string, image: string, description: string, short_description: string}[] = $state([]);
+
+    onMount(async () => {
+        const team_req = await fetch('/api/get_team');
+		team = await team_req.json();
+	});
 </script>
 
+<h2 class="text-8xl font-display text-center font-logo text-(--color-text-primary) dark:text-(--color-text-primary-dark)">The Team</h2>
 
-<div class="margin-y-20">
-	<h2 class="text-8xl font-display text-center font-logo">The Team</h2>
-</div>
-<br>
-
-<div class="flex justify-center bg-secondary text-xl">
-	<div class="text-light p-10 max-w-7xl">
-        <div class="grid grid-cols-2 gap-8 text-center font-bold">
-        {#each teamMembers as item}
-            <div>
-                <img src={item.image} alt={item.name} class="mx-auto mb-8 rounded-lg shadow-lg">
-                <p class="text-3xl">{item.name}</p>
-                <p>{item.description}</p>
-            </div>
-        {/each}
-        </div>
-    </div>
-</div>
+<section id="meet-the-team" class="py-8 flex flex-col items-center text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">
+	<div class="flex flex-col gap-8 md:grid grid-cols-3 justify-evenly">
+		{#each team as team_member}
+			<div class="flex items-center text-center flex-col gap-2 bg-(--color-primary) dark:bg-(--color-primary-dark) rounded-4xl py-3 px-4 shadow-xl">
+				<h2 class="text-4xl font-bold">{team_member.name}</h2>
+				<img class="rounded-xl" src="{team_member.image}" alt="Image of {team_member.name}" width="300px"/>
+				<p class="text-1xl">{team_member.description}</p>
+			</div>
+		{/each}
+	</div>
+</section>

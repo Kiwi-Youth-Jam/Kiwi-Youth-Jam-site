@@ -43,7 +43,7 @@
 		new NavbarDropdown({text: "About", navbarChildren: [
 			new NavbarLink({text: "About us", href: "/about"}),
 			new NavbarLink({text: "Contact us", href: "/contact"}),
-			new NavbarLink({text: "The cool people behind everything", href: "/team"}),
+			new NavbarLink({text: "The team", href: "/team"}),
 			new NavbarLink({text: "Sponsors", href: "/sponsors"})
 		]}),
 
@@ -102,7 +102,7 @@
 					<DropdownMenu>
 						<span class="hover:text-(--color-text-hovered) select-none hover:dark:text-(--color-text-hovered-dark) transition">{navItem.text}</span>
 
-						<div class='content bg-(--color-nav-secondary) dark:bg-(--color-nav-secondary-dark) px-3 pb-3 rounded-b-xl flex-col gap-2 items-center min-w-max'>
+						<div class='content bg-(--color-nav-secondary) dark:bg-(--color-nav-secondary-dark) shadow-xl px-3 pb-3 rounded-b-xl flex-col gap-2 items-center min-w-max'>
 							{#each navItem.navbarChildren as dropdownItem}
 								<DropdownMenuItem text={dropdownItem.text} href={dropdownItem.href} />
 							{/each}
