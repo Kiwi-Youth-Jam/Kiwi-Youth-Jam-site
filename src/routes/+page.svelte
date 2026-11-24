@@ -4,6 +4,9 @@
 
 	import CaruoselImage from '$lib/components/CaruoselImage.svelte';
 
+	import TeamMemberGrid from '$lib/components/TeamMemberGrid.svelte';
+	import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
+
 	function shuffle(array: string[]) {
 		let i = array.length, j, temp;
 
@@ -126,15 +129,11 @@
 <section id="meet-the-team" class="py-8 flex flex-col items-center text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">
 	<h2 class="text-5xl font-bold mb-5">Meet the team</h2>
 
-	<div class="flex flex-col gap-8 md:grid grid-cols-3 justify-evenly">
+	<TeamMemberGrid>
 		{#each team as team_member}
-			<div class="flex items-center text-center flex-col gap-2">
-				<h2 class="text-2xl font-bold">{team_member.name}</h2>
-				<img class="rounded-xl" src="{team_member.image}" alt="Image of {team_member.name}" width="300px"/>
-				<p class="text-1xl">{team_member.short_description}</p>
-			</div>
+			<TeamMemberCard name={team_member.name} image={team_member.image} description={team_member.short_description} />
 		{/each}
-	</div>
+	</TeamMemberGrid>
 </section>
 
 <!--<section id="contacts" class="flex justify-center bg-light text-xl">

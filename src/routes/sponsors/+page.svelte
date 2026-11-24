@@ -1,37 +1,16 @@
 <script lang="ts">
-    const sponsors = [
-        {
-            name: "Company 1",
-            logo: "images/IMG_9867.JPG",
-        },
-        {
-            name: "Company 2",
-            logo: "images/IMG_9867.JPG",
-        },
-        {
-            name: "Company 3",
-            logo: "images/IMG_9867.JPG",
-        },
-        {
-            name: "Company 4",
-            logo: "images/IMG_9867.JPG",
-        }
-    ];
+    import { onMount } from 'svelte';
+
+    let sponsors: {name: string, image: string}[] = $state([]);
+
+    onMount(async () => {
+        const team_req = await fetch('/api/get_sponsors');
+		sponsors = await team_req.json();
+	});
 </script>
 
-<section id="sponsors">
-    <h2 class="text-8xl font-display text-center font-logo text-(--color-text-primary) dark:text-(--color-text-primary-dark)">Our Sponsors</h2>
+<h2 class="text-8xl font-display text-center font-logo text-(--color-text-primary) dark:text-(--color-text-primary-dark)">Our Sponsors</h2>
 
-    <div class="flex justify-center text-xl">
-        <div class="text-light p-10 max-w-7xl">
-            <div class="grid grid-cols-2 gap-8 text-center font-bold">
-            {#each sponsors as item}
-                <div>
-                    <img src={item.logo} alt={item.name} class="mx-auto mb-8 rounded-lg shadow-lg">
-                    <p class="text-3xl">{item.name}</p>
-                </div>
-            {/each}
-            </div>
-        </div>
-    </div>
+<section id="sponsors">
+    
 </section>

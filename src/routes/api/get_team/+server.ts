@@ -27,7 +27,7 @@ export const GET: RequestHandler = async ({ url }) => {
 			name: "Lewie Dudding",
 			image: `${CDN_URL}/people/lewie.jpg`,
 			description: "Funky car enjoyer",
-            short_description: ""
+            short_description: "Funky car lover"
 		},
 		{
 			name: "Brendan Laking",
