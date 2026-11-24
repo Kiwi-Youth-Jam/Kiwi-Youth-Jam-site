@@ -11,8 +11,9 @@
         display: none;
         position: absolute;
         left: 50%;
-        top: calc(100% + 20px);
+        padding-top: 20px;
         transform: translateX(-50%);
+        z-index: -1;
     }
 
     div:hover :global(.content) {
