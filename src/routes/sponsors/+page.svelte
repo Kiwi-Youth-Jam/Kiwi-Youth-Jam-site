@@ -9,7 +9,7 @@
 	});
 </script>
 
-<h2 class="text-8xl font-display text-center font-logo text-(--color-text-primary) dark:text-(--color-text-primary-dark)">Our Sponsors</h2>
+<h2 class="text-8xl font-display text-center font-logo text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">Our Sponsors</h2>
 
 <section id="sponsors">
     

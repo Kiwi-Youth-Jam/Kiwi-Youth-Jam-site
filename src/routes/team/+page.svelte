@@ -11,7 +11,7 @@
 	});
 </script>
 
-<h2 class="text-8xl font-display text-center font-logo text-(--color-text-primary) dark:text-(--color-text-primary-dark)">The Team</h2>
+<h2 class="text-8xl font-display text-center font-logo text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">The Team</h2>
 
 <section id="meet-the-team" class="py-8 flex flex-col items-center text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">
 	<TeamMemberGrid>

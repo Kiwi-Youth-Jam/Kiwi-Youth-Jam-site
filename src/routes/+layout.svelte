@@ -54,7 +54,7 @@
 			new NavbarLink({text: "Media", href: "/media"})
 		]}),
 
-		new NavbarDropdown({text: "The super boring but nessacary stuff", navbarChildren: [
+		new NavbarDropdown({text: "The boring but important stuff", navbarChildren: [
 			new NavbarLink({text: 'Privacy policy', href: '/privacy'}),
 			new NavbarLink({text: 'Code of conduct', href: '/codeofconduct'}),
 			new NavbarLink({text: 'Safeguarding', href: '/safeguarding'})
@@ -63,7 +63,8 @@
 		new NavbarDropdown({text: 'For parents', navbarChildren: [
 			new NavbarLink({text: 'Safeguarding', href: '/safeguarding'}),
 			new NavbarLink({text: 'For parents', href: '/parents'}),
-			new NavbarLink({text: 'FAQ', href: '/faq'}),
+			new NavbarLink({text: 'In the event of an emergency', href: '/emergency'}),
+			new NavbarLink({text: 'FAQ', href: '/faq'})
 		]}),
 
 		new NavbarLink({text: 'FAQ', href: '/faq'}),
