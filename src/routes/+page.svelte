@@ -4,8 +4,8 @@
 
 	import CaruoselImage from '$lib/components/CaruoselImage.svelte';
 
-	import TeamMemberGrid from '$lib/components/TeamMemberGrid.svelte';
-	import TeamMemberCard from '$lib/components/TeamMemberCard.svelte';
+	import Grid from '$lib/components/Grid.svelte';
+	import GridCard from '$lib/components/GridCard.svelte';
 
 	function shuffle(array: string[]) {
 		let i = array.length, j, temp;
@@ -129,9 +129,9 @@
 <section id="meet-the-team" class="py-8 flex flex-col items-center text-(--color-text-secondary) dark:text-(--color-text-secondary-dark)">
 	<h2 class="text-5xl font-bold mb-5">Meet the team</h2>
 
-	<TeamMemberGrid>
+	<Grid>
 		{#each team as team_member}
-			<TeamMemberCard name={team_member.name} image={team_member.image} description={team_member.short_description} />
+			<GridCard name={team_member.name} image={team_member.image} description={team_member.short_description} />
 		{/each}
-	</TeamMemberGrid>
+	</Grid>
 </section>
