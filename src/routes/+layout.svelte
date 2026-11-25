@@ -2,6 +2,7 @@
 	import favicon from '$lib/assets/favicon.svg';
 	import DropdownMenu from '$lib/components/DropdownMenu.svelte';
 	import DropdownMenuItem from '$lib/components/DropdownMenuItem.svelte';
+	import DropdownMenuMobile from '$lib/components/DropdownMenuMobile.svelte';
 
 	import '../app.css';
 
@@ -57,11 +58,11 @@
 		new NavbarDropdown({text: "The boring but important stuff", navbarChildren: [
 			new NavbarLink({text: 'Privacy policy', href: '/privacy'}),
 			new NavbarLink({text: 'Code of conduct', href: '/codeofconduct'}),
-			new NavbarLink({text: 'Safeguarding', href: '/safeguarding'})
+			new NavbarLink({text: 'Safe guarding', href: '/safeguarding'})
 		]}),
 
 		new NavbarDropdown({text: 'For parents', navbarChildren: [
-			new NavbarLink({text: 'Safeguarding', href: '/safeguarding'}),
+			new NavbarLink({text: 'Safe guarding', href: '/safeguarding'}),
 			new NavbarLink({text: 'For parents', href: '/parents'}),
 			new NavbarLink({text: 'In the event of an emergency', href: '/emergency'}),
 			new NavbarLink({text: 'FAQ', href: '/faq'})
@@ -124,7 +125,21 @@
 		<div class="md:hidden mt-2 bg-(--color-nav) dark:bg-(--color-nav-dark) backdrop-blur-xl rounded-xl p-4 text-light font-display text-md relative z-10">
 			<nav class="flex flex-col">
 				{#each navBar as navItem}
-					<a href={navItem.href} class="hover:text-(--color-text-hovered) hover:dark:text-(--color-text-hovered-dark) py-3 px-3 transition" onclick={() => menuOpen = false}>{navItem.text}</a>
+					{#if navItem instanceof NavbarLink}
+						<a href={navItem.href} class="hover:text-(--color-text-hovered) hover:dark:text-(--color-text-hovered-dark) py-3 px-3 transition" onclick={() => menuOpen = false}>{navItem.text}</a>
+					{/if}
+
+					{#if navItem instanceof NavbarDropdown}
+						<DropdownMenuMobile>
+							<span class="hover:text-(--color-text-hovered) select-none hover:dark:text-(--color-text-hovered-dark) transition">{navItem.text}</span>
+
+							<div class='content bg-(--color-nav-secondary) dark:bg-(--color-nav-secondary-dark) text-left shadow-2xl px-3 pb-3 rounded-b-xl flex-col gap-3 min-w-max'>
+								{#each navItem.navbarChildren as dropdownItem}
+									<DropdownMenuItem text={dropdownItem.text} href={dropdownItem.href} />
+								{/each}
+							</div>
+						</DropdownMenuMobile>
+					{/if}
 				{/each}
 
 				<button class="font-display text-l text-white p-3 hover:cursor-pointer hover:text-(--color-text-hovered) hover:dark:text-(--color-text-hovered-dark)">Sign Up</button>

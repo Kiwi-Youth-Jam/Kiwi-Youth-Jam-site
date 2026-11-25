@@ -11,6 +11,9 @@
         display: none;
         position: absolute;
         padding-top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: center;
         z-index: -1;
     }
 

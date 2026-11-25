@@ -23,6 +23,20 @@
         font-size: revert;
         font-weight: revert;
         margin: revert;
+        overflow-wrap: anywhere;
+        word-break: normal;
+        box-sizing: border-box;
+    }
+
+    .doc-content :global(*) {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .doc-content :global(pre) {
+        max-width: 100%;
+        overflow-x: auto;
+        white-space: pre;
     }
 
     .doc-content :global(ul) {
