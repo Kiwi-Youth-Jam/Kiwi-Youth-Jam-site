@@ -4,10 +4,12 @@
     import GridCard from '$lib/components/GridCard.svelte';
     import Header from '$lib/components/Header.svelte';
 
+    import { CDN_URL } from '$app/env/public';
+
     let sponsors: {name: string, image: string}[] = $state([]);
 
     onMount(async () => {
-        const sponsors_req = await fetch('/api/get_sponsors');
+        const sponsors_req = await fetch(`${CDN_URL}/pages/sponsors.json`);
 		sponsors = await sponsors_req.json();
 	});
 </script>

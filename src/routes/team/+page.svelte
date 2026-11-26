@@ -4,10 +4,12 @@
     import GridCard from '$lib/components/GridCard.svelte';
 	import Header from '$lib/components/Header.svelte';
 
+	import { CDN_URL } from '$app/env/public';
+
     let team: {name: string, image: string, description: string, short_description: string}[] = $state([]);
 
     onMount(async () => {
-        const team_req = await fetch('/api/get_team');
+        const team_req = await fetch(`${CDN_URL}/pages/team.json`);
 		team = await team_req.json();
 	});
 </script>

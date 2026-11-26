@@ -7,6 +7,8 @@
 	import Grid from '$lib/components/Grid.svelte';
 	import GridCard from '$lib/components/GridCard.svelte';
 
+	import { CDN_URL } from '$app/env/public';
+
 	function shuffle(array: string[]) {
 		let i = array.length, j, temp;
 
@@ -55,7 +57,7 @@
 			const carousel_images_req = await fetch('/api/get_carousel_images');
 			carousel_images = shuffle(await carousel_images_req.json());
 
-			const team_req = await fetch('/api/get_team');
+			const team_req = await fetch(`${CDN_URL}/pages/team.json`);
 			team = await team_req.json();
 
 			await tick();
