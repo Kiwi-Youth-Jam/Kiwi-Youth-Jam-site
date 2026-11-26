@@ -8,7 +8,7 @@
     let html = $derived(unified().use(remarkParse).use(remarkRehype).use(rehypeStringify).process(md).then(result => String(result)));
 </script>
 
-<section class="shadow-xl rounded-4xl bg-(--color-primary) bg-(--color-primary-dark) text-(--color-text-secondary) dark:text-(--color-text-secondary-dark) flex flex-col gap-4 doc-content mx-[10vw] min-[768px]:mx-[20vw] min-[1100px]:mx-[25vw] p-6">
+<section class="shadow-xl rounded-4xl bg-(--color-primary) bg-(--color-primary-dark) text-(--color-text-secondary) dark:text-(--color-text-secondary-dark) flex flex-col gap-4 doc-content mx-[10vw] min-[768px]:mx-[20vw] min-[1100px]:mx-[25vw] px-3 py-2">
     {#await html}
         <span>Loading...</span>
     {:then content}
