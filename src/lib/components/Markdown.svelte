@@ -10,7 +10,7 @@
     let html = $derived(unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeRaw).use(rehypeSanitize).use(rehypeStringify).process(md).then(result => String(result)));
 </script>
 
-<section class="{className} text-(--color-text-secondary) dark:text-(--color-text-secondary-dark) flex flex-col gap-4 doc-content">
+<section class="{className} flex flex-col gap-4 doc-content">
     {#await html}
         <span>Loading...</span>
     {:then content}
