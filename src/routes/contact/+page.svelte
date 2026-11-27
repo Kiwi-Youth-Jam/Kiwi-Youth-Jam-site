@@ -14,4 +14,4 @@
 </script>
 
 <Header text="Contact us" />
-<Markdown md={md} />
+<Markdown class="shadow-xl rounded-4xl bg-(--color-primary) bg-(--color-primary-dark) mx-[10vw] min-[768px]:mx-[20vw] min-[1100px]:mx-[25vw] px-2" md={md} />

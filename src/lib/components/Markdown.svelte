@@ -1,14 +1,16 @@
 <script>
-    import remarkParse from 'remark-parse'
-    import remarkRehype from 'remark-rehype'
-    import rehypeStringify from 'rehype-stringify'
+    import remarkParse from 'remark-parse';
+    import remarkRehype from 'remark-rehype';
+    import rehypeRaw from 'rehype-raw';
+    import rehypeSanitize from 'rehype-sanitize';
+    import rehypeStringify from 'rehype-stringify';
     import { unified } from 'unified'
 
-    const { md } = $props();
-    let html = $derived(unified().use(remarkParse).use(remarkRehype).use(rehypeStringify).process(md).then(result => String(result)));
+    const { md, class: className = "" } = $props();
+    let html = $derived(unified().use(remarkParse).use(remarkRehype, { allowDangerousHtml: true }).use(rehypeRaw).use(rehypeSanitize).use(rehypeStringify).process(md).then(result => String(result)));
 </script>
 
-<section class="shadow-xl rounded-4xl bg-(--color-primary) bg-(--color-primary-dark) text-(--color-text-secondary) dark:text-(--color-text-secondary-dark) flex flex-col gap-4 doc-content mx-[10vw] min-[768px]:mx-[20vw] min-[1100px]:mx-[25vw]">
+<section class="{className} text-(--color-text-secondary) dark:text-(--color-text-secondary-dark) flex flex-col gap-4 doc-content">
     {#await html}
         <span>Loading...</span>
     {:then content}
