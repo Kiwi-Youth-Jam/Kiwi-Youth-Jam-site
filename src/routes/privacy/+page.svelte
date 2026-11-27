@@ -12,4 +12,4 @@
 </script>
 
 <Header text="Kiwi Youth Jam Privacy Policy" />
-<Markdown md={md} />
+<Markdown class="text-(--color-text-secondary) dark:text-(--color-text-secondary-dark) shadow-xl rounded-4xl bg-(--color-primary) bg-(--color-primary-dark) mx-[10vw] min-[768px]:mx-[20vw] min-[1100px]:mx-[25vw] px-4" md={md} />
