@@ -54,8 +54,17 @@
 
 	onMount(() => {
 		async function init() {
-			const carousel_images_req = await fetch('/api/get_carousel_images');
-			carousel_images = shuffle(await carousel_images_req.json());
+			const query_dir = await fetch(`${CDN_URL}/carousel?ls`);
+			const query_json = await query_dir.json();
+
+			for (let image of query_json.files) {
+				if (image.ext !== 'jpg')
+					continue;
+
+				carousel_images.push(`${CDN_URL}/carousel/${image.href}`);
+			}
+
+			carousel_images = shuffle(carousel_images);
 
 			const team_req = await fetch(`${CDN_URL}/pages/team.json`);
 			team = await team_req.json();

@@ -52,7 +52,7 @@
 			new NavbarLink({text: "Our past events", href: "/events"}),
 			new NavbarLink({text: "Schedule", href: "/schedule"}),
 			new NavbarLink({text: "Game Showcase", href: "/games"}),
-			new NavbarLink({text: "Media", href: "/media"})
+			new NavbarLink({text: "Gallery", href: "/gallery"})
 		]}),
 
 		new NavbarDropdown({text: "The boring but important stuff", navbarChildren: [
